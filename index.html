@@ -4,6 +4,69 @@
 	<title>boeheimwu</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><!-- CDN -->
+	<script type="text/javascript">
+	$(document).ready(function(){     
+		function run_search(src){
+			let val_sa = $("#sa").val();
+			let val_sb = $("#sb").val();
+			if(val_sa!="" && val_sb==""){
+				//作者
+				if(src=="sab_tpml"){
+					window.open("https://book.tpml.edu.tw/search?searchField=PN&searchInput="+val_sa, "_blank");
+				}else if(src=="sab_tphcc"){
+					window.open("https://webpac.tphcc.gov.tw/webpac/search.cfm?m=ap&t0=i&k0="+val_sa+"&c0=and", "_blank");
+				}else if(src=="sab_ntl"){
+					window.open("https://cis2.ntl.edu.tw/webpac/search/?field=au&match=smart&q="+val_sa, "_blank");
+				}else if(src=="sab_google"){
+					window.open("https://www.google.com.tw/search?q="+val_sa, "_blank");
+				}else if(src=="sab_books-tw"){
+					window.open("https://search.books.com.tw/search/query/key/"+val_sa, "_blank");
+				}else if(src=="sab_amazon"){
+					window.open("https://www.google.com.tw/search?q=amazon+"+val_sa, "_blank");
+				}
+			}else if(val_sa=="" && val_sb!=""){
+				//書名
+				if(src=="sab_tpml"){
+					window.open("https://book.tpml.edu.tw/search?searchField=TI&searchInput="+val_sb, "_blank");
+				}else if(src=="sab_tphcc"){
+					window.open("https://webpac.tphcc.gov.tw/webpac/search.cfm?m=ss&t0=k&k0="+val_sb+"&c0=and", "_blank");
+				}else if(src=="sab_ntl"){
+					window.open("https://cis2.ntl.edu.tw/webpac/search/?field=ti&match=smart&q="+val_sb, "_blank");
+				}else if(src=="sab_google"){
+					window.open("https://www.google.com.tw/search?q="+val_sb, "_blank");
+				}else if(src=="sab_books-tw"){
+					window.open("https://search.books.com.tw/search/query/key/"+val_sb, "_blank");
+				}else if(src=="sab_amazon"){
+					window.open("https://www.google.com.tw/search?q=amazon+"+val_sb, "_blank");
+				}
+			}else if(val_sa!="" && val_sb!=""){
+				//作者+書名
+				if(src=="sab_tpml"){
+					window.open("https://book.tpml.edu.tw/search?op=and&searchField=TI&searchInput="+val_sb+"&searchField=PN&searchInput="+val_sa, "_blank");
+				}else if(src=="sab_tphcc"){
+					window.open("https://webpac.tphcc.gov.tw/webpac/search.cfm?m=as&t0=a&k0="+val_sa+"&c0=and&t1=t&k1="+val_sb+"&c1=and", "_blank");
+				}else if(src=="sab_ntl"){
+					window.open("https://cis2.ntl.edu.tw/webpac/search/?q="+val_sb+"&field=ti&op=AND&q="+val_sa+"&field=au&op=AND&searchmode=AdvancedSearch", "_blank");
+				}else if(src=="sab_google"){
+					window.open("https://www.google.com.tw/search?q="+val_sa+" "+val_sb, "_blank");
+				}else if(src=="sab_books-tw"){
+					window.open("https://search.books.com.tw/search/query/key/"+val_sa+" "+val_sb, "_blank");
+				}else if(src=="sab_amazon"){
+					window.open("https://www.google.com.tw/search?q=amazon+"+val_sa+" "+val_sb, "_blank");
+				}
+			}else{
+				alert("未輸入");
+			}
+		}   
+		$("#sab_tpml").click(function(){run_search("sab_tpml")});
+		$("#sab_tphcc").click(function(){run_search("sab_tphcc")});
+		$("#sab_ntl").click(function(){run_search("sab_ntl")});
+		$("#sab_google").click(function(){run_search("sab_google")});
+		$("#sab_books-tw").click(function(){run_search("sab_books-tw")});
+		$("#sab_amazon").click(function(){run_search("sab_amazon")});
+	});
+	</script>	
 	<style type="text/css">
 	.align_top {vertical-align: top; }
 	.mt-0 {
@@ -15,6 +78,10 @@
 	.mb-1 {
 	margin-bottom: 1rem !important;
 	}
+	.ml-1,
+	.mx-1 {
+	  margin-left: 1rem !important;
+	}
 	.ml-2,
 	.mx-2 {
 	  margin-left: 2rem !important;
@@ -22,11 +89,16 @@
 	.pr-1 {
 	padding-right: 1rem !important;
 	}
+	.ZLavender {background-color: lavender;}
+	input::placeholder {
+	    color: #ccc;  /* 淺灰色 */
+	    opacity: 1;  /* 確保在 Firefox 中也能正常顯示 */
+	}
 	</style>
 </head> 
 <body>
 bohan			                                              
-        <table border="1" class="ml-2 "> 
+        <table border="1" class="ml-1 "> 
            <tr class="align_top">	
               <td>github
               </td>     
@@ -56,7 +128,24 @@ bohan
            <tr class="align_top">	
               <td>書籍
               </td>     
-              <td>	                          
+              <td>	                    
+			<table border="1" class="ZLavender"> 
+			   <tr class="align_top">	
+			      <td><input type="text" id="sa" name="book_author" placeholder="作者" size="23">
+			      </td>     
+			      <td><input type="text" id="sb" name="book_name" placeholder="書名" size="37">
+			      </td>       
+			   </tr>
+			   <tr class="align_top">	
+			      <td colspan="2"><a id="sab_tpml">台北</a>
+					⎮<a id="sab_tphcc">新北</a>
+					⎮<a id="sab_ntl">ntl</a>
+					⎮<a id="sab_google">谷歌</a>
+					⎮<a id="sab_books-tw">博客來</a>
+					⎮<a id="sab_amazon">Amazon</a>
+			      </td>     
+			   </tr>
+			</table>                
 			<table border="1"> 
 			   <tr class="align_top">	
 			      <td>圖書館
