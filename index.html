@@ -65,9 +65,71 @@
 		$("#sab_google").click(function(){run_search("sab_google")});
 		$("#sab_books-tw").click(function(){run_search("sab_books-tw")});
 		$("#sab_amazon").click(function(){run_search("sab_amazon")});
+		//~~~~~~
+		let html_aidiv_id = "ai_list";
+		let html_aichosen_id = "ai_chosen";
+		let ai_checkBox_default_on = "Y";
+		let ai_data_arr = [ {"name":"Felo", "url": "https://felo.ai/"}
+			,{"name":"perplexity", "url": "https://www.perplexity.ai/"}
+			,{"name":"DeepSeek" , "url": "https://chat.deepseek.com"}
+			,{"name":"ChatGPT", "url": "https://chatgpt.com"}
+			,{"name":"Grok" , "url": "https://grok.com/?referrer=website"}
+			,{"name":"Claude" , "url": "https://claude.ai"}
+			,{"name":"Gemini" , "url": "https://gemini.google.com"}
+			// ,{"name":"Qwen" , "url": "https://chat.qwenlm.ai"}
+		];
+		if(true){ // ai
+			let ai_param_list = [];
+			ai_data_arr.forEach(function(data, index) {
+				let _item_name = data.name ;
+				let _item_url = data.url ; 
+				
+				ai_param_list.push("<tr><td><label><input type='checkbox' name='"+html_aichosen_id+"' value='"+_item_name+"'>"+(_item_name)+"</label></td><td>（<a href='"+_item_url+"' target='_blank'>*</a>）</td></tr>");
+			});
+			$("#"+html_aidiv_id).html(ai_param_list.join(""));
+			//======
+			if(ai_checkBox_default_on=="Y"){
+				box_on(html_aidiv_id);
+			}
+			//======
+			build_btn_allOnOff_fx("ai_all_on", box_on, html_aidiv_id);
+			build_btn_allOnOff_fx("ai_all_off", box_off, html_aidiv_id);
+			$("#ai_chosen_open").click(function(){
+				$("input[name="+html_aichosen_id+"]:checked").each(function(idx, elm) {
+					let aiName = $(this).val();
+					ai_data_arr.forEach(function(data, index) {
+						if(aiName == data.name){
+							window.open(data.url , "_blank");
+						}
+					});
+				});
+			});
+		}
+		//~~~~~~
+		function box_on(html_id){
+			$("#"+html_id).find("input[type=checkbox]").each(function() {
+				 $(this).prop("checked", true);
+			});
+		}
+		function box_off(html_id){
+			$("#"+html_id).find("input[type=checkbox]").each(function() {
+				 $(this).removeAttr('checked').prop("checked", false);
+			});
+		}
+		function build_btn_allOnOff_fx( btn_id,  fx, html_div_id){
+			$("#"+btn_id).click(function(){
+				fx(html_div_id);
+			});
+		}
+		//==========
 	});
 	</script>	
 	<style type="text/css">
+	label {
+	  display: inline-block;
+	  margin-bottom: .5rem;
+	}
+	/* ========== */
 	.align_top {vertical-align: top; }
 	.mt-0 {
 	margin-top: 0rem !important;
@@ -110,8 +172,12 @@
 	.px-3 {
 	  padding-left: 3rem !important;
 	}
+	.Z_wAI {
+	  padding-right: 7rem !important;
+	}
 	.ZG {background-color: lightgray;}
 	.ZLavender {background-color: lavender;}
+	.ZConsole {background-color:#1E1E1E; color:white; }
 	input::placeholder {
 	    color: #ccc;  /* 淺灰色 */
 	    opacity: 1;  /* 確保在 Firefox 中也能正常顯示 */
@@ -148,6 +214,36 @@ bohan
 			      <td>Base64 Image Encoder
 			      </td>     
 			      <td><a href="https://elmah.io/tools/base64-image-encoder/" target="_blank">https://elmah.io/tools/base64-image-encoder/</a>
+			      </td>       
+			   </tr>
+			   <tr class="align_top">	
+			      <td><details class="my_details " ><summary><span class="ZConsole Z_wAI ">AI助手</span></summary> 				                                              
+					<table border="1" class="ml-1"> 
+					   <tr class="align_top ">	
+					      <td>
+							<button id="ai_chosen_open" >開啟</button>
+							<u id="ai_all_on" class="small ml-1 Z3">全選</u>
+							<u id="ai_all_off" class="small ml-1 Z3">取消</u>
+					      </td>     
+					   </tr>
+					   <tr class="align_top ">	
+					      <td>
+							<table id="ai_list">
+							</table>
+					      </td>       
+					   </tr>
+					</table>  
+					</details>
+			      </td>     
+			      <td>	                                              
+					<table border="1"> 
+					   <tr class="align_top">	
+					      <td class="px-2 "><a href="https://onedrive.live.com/" target="_blank">OneDrive</a>
+					      </td>     
+					      <td class="px-2 "><a href="https://www.dropbox.com/home/" target="_blank">Dropbox</a>
+					      </td>       
+					   </tr>
+					</table> 
 			      </td>       
 			   </tr>
 			</table>   
@@ -250,20 +346,6 @@ bohan
 			      </td>         
 			      <td class="px-1"><a href="https://translate.google.com.tw/?hl=zh-TW&sl=en&tl=zh-TW" target="_blank">English→中</a>
 			      </td>      
-			   </tr>
-			</table>   
-              </td>       
-           </tr>
-           <tr class="align_top">	
-              <td>網路硬碟
-              </td>     
-              <td>			                                              
-			<table border="1"> 
-			   <tr class="align_top">	
-			      <td class="px-3 "><a href="https://onedrive.live.com/" target="_blank">OneDrive</a>
-			      </td>     
-			      <td class="px-3 "><a href="https://www.dropbox.com/home/" target="_blank">Dropbox</a>
-			      </td>       
 			   </tr>
 			</table>   
               </td>       
