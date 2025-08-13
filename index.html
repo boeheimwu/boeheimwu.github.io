@@ -66,6 +66,27 @@
 		$("#sab_books-tw").click(function(){run_search("sab_books-tw")});
 		$("#sab_amazon").click(function(){run_search("sab_amazon")});
 		//~~~~~~
+		function stock_search(src){
+			let val_stkNo = $("#stkNo").val();
+			if(val_stkNo!="" ){
+				if(src=="stk_norway"){
+					window.open("https://norway.twsthr.info/StockHolders.aspx?stock="+val_stkNo, "_blank");
+				}else if(src=="stk_histock"){
+					window.open("https://histock.tw/stock/"+val_stkNo, "_blank");
+				}else if(src=="stk_goodinfo"){
+					window.open("https://goodinfo.tw/tw/ShowBuySaleChart.asp?STOCK_ID="+val_stkNo, "_blank");
+				}else if(src=="stk_yahooNews"){
+					window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+"/news", "_blank");
+				}
+			}else{
+				alert("未輸入stkNo");
+			}
+		}   
+		$("#stk_norway").click(function(){stock_search("stk_norway")});
+		$("#stk_histock").click(function(){stock_search("stk_histock")});
+		$("#stk_goodinfo").click(function(){stock_search("stk_goodinfo")});
+		$("#stk_yahooNews").click(function(){stock_search("stk_yahooNews")});
+		//~~~~~~
 		let html_aidiv_id = "ai_list";
 		let html_aichosen_id = "ai_chosen";
 		let ai_checkBox_default_on = "Y";
@@ -526,6 +547,23 @@ bohan
 			</table>   		   
               </td>       
            </tr>
+           <tr class="align_top">	
+              <td>股票
+              </td>     
+              <td>        
+			<table border="1" class="ZLavender"> 
+			   <tr class="align_top">	
+			      <td><input type="text" id="stkNo" name="stkNo" value="2317" placeholder="00675L" size="6">
+			      </td>       	
+			      <td><a id="stk_norway">神祕金字塔</a>
+					⎮<a id="stk_histock">histock</a>
+					⎮<a id="stk_goodinfo">Goodinfo</a>
+					⎮<a id="stk_yahooNews">yahoo新聞</a>
+			      </td>     
+			   </tr>
+			</table> 
+              </td>       
+           </tr>      
         </table> 
 </body>
 </html>
