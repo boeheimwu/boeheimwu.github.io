@@ -75,8 +75,10 @@
 					window.open("https://histock.tw/stock/"+val_stkNo, "_blank");
 				}else if(src=="stk_goodinfo"){
 					window.open("https://goodinfo.tw/tw/ShowBuySaleChart.asp?STOCK_ID="+val_stkNo, "_blank");
-				}else if(src=="stk_yahooNews"){
-					window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+"/news", "_blank");
+				}else if(src=="stk_yahooTA"){
+					window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+".TW/technical-analysis", "_blank");
+				//}else if(src=="stk_yahooNews"){
+				//	window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+".TW/news", "_blank");
 				}
 			}else{
 				alert("未輸入stkNo");
@@ -85,7 +87,7 @@
 		$("#stk_norway").click(function(){stock_search("stk_norway")});
 		$("#stk_histock").click(function(){stock_search("stk_histock")});
 		$("#stk_goodinfo").click(function(){stock_search("stk_goodinfo")});
-		$("#stk_yahooNews").click(function(){stock_search("stk_yahooNews")});
+		$("#stk_yahooTA").click(function(){stock_search("stk_yahooTA")});
 		//~~~~~~
 		let html_aidiv_id = "ai_list";
 		let html_aichosen_id = "ai_chosen";
@@ -548,7 +550,7 @@ bohan
               </td>       
            </tr>
            <tr class="align_top">	
-              <td>股票
+              <td class="ZG"><a href="https://tw.stock.yahoo.com/" target="_blank">股票</a>    
               </td>     
               <td>        
 			<table border="1" class="ZLavender"> 
@@ -558,7 +560,7 @@ bohan
 			      <td><a id="stk_norway">神祕金字塔</a>
 					⎮<a id="stk_histock">histock</a>
 					⎮<a id="stk_goodinfo">Goodinfo</a>
-					⎮<a id="stk_yahooNews">yahoo新聞</a>
+					⎮<a id="stk_yahooTA">yahoo均線</a>
 			      </td>     
 			   </tr>
 			</table> 
