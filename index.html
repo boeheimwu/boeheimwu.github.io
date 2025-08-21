@@ -77,6 +77,8 @@
 					window.open("https://goodinfo.tw/tw/ShowBuySaleChart.asp?STOCK_ID="+val_stkNo, "_blank");
 				}else if(src=="stk_yahooTA"){
 					window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+".TW/technical-analysis", "_blank");
+				}else if(src=="stk_yahooIT"){
+					window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+".TW/institutional-trading", "_blank");
 				//}else if(src=="stk_yahooNews"){
 				//	window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+".TW/news", "_blank");
 				}
@@ -88,6 +90,7 @@
 		$("#stk_histock").click(function(){stock_search("stk_histock")});
 		$("#stk_goodinfo").click(function(){stock_search("stk_goodinfo")});
 		$("#stk_yahooTA").click(function(){stock_search("stk_yahooTA")});
+		$("#stk_yahooIT").click(function(){stock_search("stk_yahooIT")});
 		//~~~~~~
 		let html_aidiv_id = "ai_list";
 		let html_aichosen_id = "ai_chosen";
@@ -226,10 +229,10 @@ bohan
               <td>			                                              
 			<table border="1"> 
 			   <tr class="align_top ">	
-			      <td class="pr-3">
+			      <td class="pr-1">
 					<a href="https://github.com/boeheimwu" target="_blank">https://github.com/boeheimwu</a>
 			      </td>       
-			      <td class="px-1 ZG">
+			      <td class="px-h ZG">
 					<a href="https://gist.github.com/boeheimwu/eff6b13f35baeebc4d73aca6a30c2b40" target="_blank">my-task</a>
 			      </td>        
 			      <td class="px-1 ">
@@ -237,7 +240,13 @@ bohan
 			      </td>      
 			      <td class="px-1 ">
 					<a href="my-ARE0752.html" target="_blank">汽</a>
-			      </td>      
+			      </td>          
+			      <td class="px-h ZLavender">
+					<a href="https://www.coingecko.com/zh-tw" target="_blank">CoinGecko</a>
+			      </td>        
+			      <td class="px-h ZLavender">
+					<a href="https://rate.bot.com.tw/xrt?Lang=zh-TW" target="_blank">匯</a>
+			      </td>   
 			   </tr>
 			</table>  
               </td>       
@@ -559,15 +568,17 @@ bohan
               <td class="ZG"><a href="https://tw.stock.yahoo.com/" target="_blank">股票</a>    
               </td>     
               <td>        
-			<table border="1" class="ZLavender"> 
+			<table border="1"> 
 			   <tr class="align_top">	
 			      <td><input type="text" id="stkNo" name="stkNo" value="2317" placeholder="00675L" size="6">
 			      </td>       	
-			      <td><a id="stk_norway">神祕金字塔</a>
+			      <td class="pr-1 ZLavender"><a id="stk_norway">神祕金字塔</a>
 					⎮<a id="stk_histock">histock</a>
 					⎮<a id="stk_goodinfo">Goodinfo</a>
 					⎮<a id="stk_yahooTA">yahoo均線</a>
-			      </td>     
+			      </td>  
+			      <td class="ZG"><a id="stk_yahooIT">yahoo籌碼</a>
+			      </td>       	   
 			   </tr>
 			</table> 
               </td>       
