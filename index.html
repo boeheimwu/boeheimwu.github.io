@@ -218,6 +218,7 @@
 	    color: #ccc;  /* 淺灰色 */
 	    opacity: 1;  /* 確保在 Firefox 中也能正常顯示 */
 	}
+	.rt {text-align: right;} /* 數字 靠右對齊*/
 	</style>
 </head> 
 <body>
@@ -565,14 +566,17 @@ bohan
               </td>       
            </tr>
            <tr class="align_top">	
-              <td class="ZG"><a href="https://tw.stock.yahoo.com/" target="_blank">股票</a>    
+              <td class="ZG"><a href="https://tw.stock.yahoo.com/" target="_blank">股票</a>   
+			<div class="rt">
+			      <a href="https://tw.stock.yahoo.com/rank/turnover?exchange=TAI" target="_blank">成交值</a>    
+			</div>
               </td>     
               <td>        
 			<table border="1"> 
 			   <tr class="align_top">	
-			      <td><input type="text" id="stkNo" name="stkNo" value="2317" placeholder="00675L" size="6">
-			      </td>       	
-			      <td class="pr-1 ZLavender"><a id="stk_norway">神祕金字塔</a>
+			      <td><input type="text" id="stkNo" name="stkNo" value="2317" placeholder="00675L" size="3">
+			      </td>        	
+			      <td class="pr-h ZLavender"><a id="stk_norway">神祕金字塔</a>
 					⎮<a id="stk_histock">histock</a>
 					⎮<a id="stk_goodinfo">Goodinfo</a>
 					⎮<a id="stk_yahooTA">yahoo均線</a>
