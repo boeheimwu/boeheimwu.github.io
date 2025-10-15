@@ -3,6 +3,17 @@
 	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><!-- CDN -->
+	<script type="text/javascript">
+	$(document).ready(function(){     
+		$(".cardbtn").click(function(){
+			let elm_id = $(this).text();
+			$(".my_tr_card").hide();
+			$("#my_tr_card_"+(elm_id||"")).show();
+		});
+		$(".cardbtn_little_spicy").trigger("click");
+	});
+	</script>	
 	<style type="text/css">
 	.display-3 {
 	  font-size: 4.5rem;
@@ -25,25 +36,31 @@
 	  
 	}
 	.fy {
-	  // background-color: lightgray;
 	  display: inline-block; height: 40px; 
+	}
+	.cardbtn {
+	  background-color: lightgray;
 	}
 	</style>
 	</head> 
 <body>			                                              
         <table border="1" class="ml-2 "> 
-           <tr class="align_top">	
+           <tr><td class="cardbtn">01</td></tr>
+           <tr id="my_tr_card_01" class="align_top my_tr_card">	
               <td><div class="display_th">ไม่เผ็ดนะครับ</div>
 			<div class="display_en">No spicy, please</div>
 			<span class="fy"><sub>（<a href="https://translate.google.com.tw/?hl=zh-TW&sl=th&tl=zh-TW&text=ไม่เผ็ดนะครับ&op=translate" target="_blank">...</a>）</sub></span>
               </td>       
            </tr>
-           <tr class="align_top">	
+	   <!-- card separator -->
+           <tr><td class="cardbtn cardbtn_little_spicy">02</td></tr>
+           <tr id="my_tr_card_02" class="align_top my_tr_card">	
               <td><div class="display_th">เผ็ดนิดหน่อยนะครับ</div>
 			<div class="display_en">Just a little spicy, please</div>
 			<span class="fy"><sub>（<a href="https://translate.google.com.tw/?hl=zh-TW&sl=th&tl=zh-TW&text=เผ็ดนิดหน่อยนะครับ&op=translate" target="_blank">...</a>）</sub></span>
               </td>     
            </tr>
+	   <!-- card separator -->
         </table> 
 </body>
 </html>
