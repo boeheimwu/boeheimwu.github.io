@@ -98,14 +98,14 @@
 		let html_aidiv_id = "ai_list";
 		let html_aichosen_id = "ai_chosen";
 		let ai_checkBox_default_on = "Y";
-		let ai_data_arr = [ {"name":"Felo", "url": "https://felo.ai/"}
-			,{"name":"perplexity", "url": "https://www.perplexity.ai/"}
+		let ai_data_arr = [ {"name":"ChatGPT", "url": "https://chatgpt.com"}
 			,{"name":"DeepSeek" , "url": "https://chat.deepseek.com"}
-			,{"name":"ChatGPT", "url": "https://chatgpt.com"}
+			,{"name":"Qwen" , "url": "https://chat.qwenlm.ai/"}
+			,{"name":"Felo", "url": "https://felo.ai/"}
+			,{"name":"perplexity", "url": "https://www.perplexity.ai/"}
 			,{"name":"Grok" , "url": "https://grok.com/?referrer=website"}
 			,{"name":"Claude" , "url": "https://claude.ai"}
-			,{"name":"Gemini" , "url": "https://gemini.google.com"}
-			// ,{"name":"Qwen" , "url": "https://chat.qwenlm.ai"}
+			//,{"name":"Gemini" , "url": "https://gemini.google.com"}
 		];
 		if(true){ // ai
 			let ai_param_list = [];
@@ -131,6 +131,15 @@
 							window.open(data.url , "_blank");
 						}
 					});
+				});
+			});
+			$("#ai_default_open").click(function(){
+				ai_data_arr.forEach(function(data, index) {
+					if(data.name == "ChatGPT" 
+						|| data.name == "DeepSeek" 
+						|| data.name == "Qwen" ) {
+						window.open(data.url , "_blank");
+					}
 				});
 			});
 		}
@@ -210,7 +219,7 @@
 	  padding-left: 3rem !important;
 	}
 	.Z_wAI {
-	  padding-right: 7rem !important;
+	  padding-right: 6rem !important;
 	}
 	.ZSlate {background-color: #E2E8F0;}
 	.ZG {background-color: lightgray;}
@@ -279,7 +288,7 @@ bohan
 			      </td>       
 			   </tr>
 			   <tr class="align_top">	
-			      <td><details class="my_details " ><summary><span class="ZConsole Z_wAI ">AI助手</span></summary> 				                                              
+			      <td><details class="my_details " ><summary><span class="ZG Z_wAI ">AI助手<sub>（<a id="ai_default_open" href="#">Go !</a>）</sub></span></summary> 				                                              
 					<table border="1" class="ml-1"> 
 					   <tr class="align_top ">	
 					      <td>
