@@ -72,7 +72,9 @@
 		function stock_search(src){
 			let val_stkNo = $("#stkNo").val();
 			if(val_stkNo!="" ){
-				if(src=="stk_norway"){
+				if(src=="stk_cmoney"){
+					window.open("https://www.cmoney.tw/finance/"+val_stkNo+"/f00039", "_blank");
+				}else if(src=="stk_norway"){
 					window.open("https://norway.twsthr.info/StockHolders.aspx?stock="+val_stkNo, "_blank");
 				}else if(src=="stk_histock"){
 					window.open("https://histock.tw/stock/"+val_stkNo, "_blank");
@@ -89,6 +91,7 @@
 				alert("未輸入stkNo");
 			}
 		}   
+		$("#stk_cmoney").click(function(){stock_search("stk_cmoney")});
 		$("#stk_norway").click(function(){stock_search("stk_norway")});
 		$("#stk_histock").click(function(){stock_search("stk_histock")});
 		$("#stk_goodinfo").click(function(){stock_search("stk_goodinfo")});
@@ -627,10 +630,11 @@ bohan
 			   <tr class="align_top">	
 			      <td><input type="text" id="stkNo" name="stkNo" value="2317" placeholder="00675L" size="3">
 			      </td>        	
-			      <td class="pr-h ZLavender"><a id="stk_norway">神祕金字塔</a>
-					⎮<a id="stk_histock">histock</a>
-					⎮<a id="stk_goodinfo">Goodinfo</a>
-					⎮<a id="stk_yahooTA">yahoo均線</a>
+			      <td class="pr-h ZLavender"><a id="stk_cmoney">CMoney</a>
+					|&nbsp;<a id="stk_norway">神祕金字塔</a>
+					|&nbsp;<a id="stk_histock">histock</a>
+					|&nbsp;<a id="stk_goodinfo">Goodinfo</a>
+					|&nbsp;<a id="stk_yahooTA">yahoo均線</a>
 			      </td>  
 			      <td class="ZG"><a id="stk_yahooIT">yahoo籌碼</a>
 			      </td>       	   
