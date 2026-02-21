@@ -24,6 +24,8 @@
 					window.open("https://www.google.com.tw/search?q="+val_sa, "_blank");
 				}else if(src=="sab_books-tw"){
 					window.open("https://search.books.com.tw/search/query/key/"+val_sa, "_blank");
+				}else if(src=="sab_xhsd"){
+					window.open("https://search.xhsd.com/search?keyword="+val_sa, "_blank");
 				}else if(src=="sab_amazon"){
 					window.open("https://www.google.com.tw/search?q=amazon+"+val_sa, "_blank");
 				}
@@ -39,6 +41,8 @@
 					window.open("https://www.google.com.tw/search?q="+val_sb, "_blank");
 				}else if(src=="sab_books-tw"){
 					window.open("https://search.books.com.tw/search/query/key/"+val_sb, "_blank");
+				}else if(src=="sab_xhsd"){
+					window.open("https://search.xhsd.com/search?keyword="+val_sb, "_blank");
 				}else if(src=="sab_amazon"){
 					window.open("https://www.google.com.tw/search?q=amazon+"+val_sb, "_blank");
 				}
@@ -55,6 +59,8 @@
 					window.open("https://www.google.com.tw/search?q="+val_sa+" "+val_sb, "_blank");
 				}else if(src=="sab_books-tw"){
 					window.open("https://search.books.com.tw/search/query/key/"+val_sa+" "+val_sb, "_blank");
+				}else if(src=="sab_xhsd"){
+					window.open("https://search.xhsd.com/search?keyword="+val_sa+" "+val_sb, "_blank");
 				}else if(src=="sab_amazon"){
 					window.open("https://www.google.com.tw/search?q=amazon+"+val_sa+" "+val_sb, "_blank");
 				}
@@ -67,6 +73,7 @@
 		$("#sab_ntl").click(function(){run_search("sab_ntl")});
 		$("#sab_google").click(function(){run_search("sab_google")});
 		$("#sab_books-tw").click(function(){run_search("sab_books-tw")});
+		$("#sab_xhsd").click(function(){run_search("sab_xhsd")});
 		$("#sab_amazon").click(function(){run_search("sab_amazon")});
 		//~~~~~~
 		function stock_search(src){
@@ -340,6 +347,7 @@ bohan
 					⎮<a id="sab_ntl">ntl</a>
 					⎮<a id="sab_google">谷歌</a>
 					⎮<a id="sab_books-tw">博客來</a>
+					⎮<a id="sab_xhsd">新华书店</a>
 					⎮<a id="sab_amazon">Amazon</a>
 			      </td>     
 			   </tr>
@@ -607,7 +615,8 @@ bohan
 			      </td>    
 			      <!-- td>
 			      </td -->     
-			      <td><sup>（<a href="https://tw.trip.com/" target="_blank">*</a>）</sup>Trip.com
+			      <td><sup>（<a href="https://map.baidu.com/" target="_blank">*</a>）</sup>百度地圖<br/>
+					<sup>（<a href="https://tw.trip.com/" target="_blank">*</a>）</sup>Trip.com
 			      </td>       
 			   </tr>
 			   <tr class="align_top">     
