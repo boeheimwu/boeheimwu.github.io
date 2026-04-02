@@ -5,14 +5,29 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
+	.align_top {vertical-align: top; }
+	.mt-0 {
+	margin-top: 0rem !important;
+	}
+	.ml-2 {
+	margin-left: 2rem !important;
+	}
+	.mb-0 {
+	  margin-bottom: 0rem !important;
+	}
+	.mb-1 {
+	  margin-bottom: 1rem !important;
+	}
 	.pr-1{
 	  padding-right: 1rem !important;
 	}
 	.ZG {background-color: lightgray;}
+	.ZG3 {background-color: lightgray;color: blue;}
 	</style>
 </head> 	
-<body>		                                              
-	<table border="1" > 
+<body>		
+	VoWiFi 
+	<table border="1" class="ml-2 mb-1"> 
 	   <tr class="align_top ">	
 	      <td class="pr-1">一般VoWiFi 
 	      </td>     
@@ -34,5 +49,73 @@
 	      </td>            
 	   </tr>
 	</table> 
+	
+	3G 關閉 ≠ 收不到簡訊
+		<ul class="mt-0">
+			<li>NTT Docomo 的 3G服務 將於 2026-03-31 關台。因此，自 2026-04-01 將無法再使用 3G 語音通話及數據通信
+			</li>
+			<li><span class="ZG">IP簡訊／SMS over IP<sub>（透過 "Wi-Fi訊號" 收發簡訊）</sub></span>
+				<ul>
+					<li><sup>（<a href="https://www.taiwanmobile.com/mobile/postpaid/volte.html" target="_blank">*</a>）</sup>手機OS 有要求	                                              
+						<table border="1" class="ml-2"> 
+						   <tr class="align_top ">	
+						      <td>Apple
+						      </td>     
+						      <td>iOS17.2 以上
+						      </td>       
+						   </tr>
+						   <tr class="align_top ">	
+						      <td class="pr-1">Samsung
+						      </td>     
+						      <td class="pr-1">Android 14 以上
+						      </td>       
+						   </tr>
+						</table>  
+					</li>
+				</ul>   
+			</li>
+			<li>應對 3G關台
+				<table border="1" class="ml-2 "> 
+				   <tr class="align_top">	
+				      <td>A
+				      </td>     
+				      <td>
+						<table border="1" class="ml-0 "> 
+						   <tr class="align_top">	
+						      <td rowspan="2">在 4G / 5G 網路裡
+						      </td>     
+						      <td>語音 → VoLTE / VoNR
+						      </td>       
+						   </tr>
+						   <tr class="align_top">	
+						      <td>簡訊 → SMS over IMS
+						      </td>       
+						   </tr>
+						</table> 
+				      </td>       
+				   </tr>
+				   <tr class="align_top">	
+				      <td>B
+				      </td>     
+				      <td>
+						只要：
+						<ol> 
+							<li>"本國 SIM" 有跟當地電信商完成漫遊註冊<sub class="ZG">（SIM1 的 數據漫遊）</sub><sub class="ZG3">（開啟 數據漫遊 是為了收 SIM1的簡訊）</sub>
+							</li>
+							<li>有 IMS 設定成功
+							</li>
+						</ol> 
+						就能收簡訊
+				      </td>       
+				   </tr>
+				</table>     
+			</li> 
+			<li><span class="ZG3">觀察</span>
+				<ul>   
+					<li>在 國外 時，是否回到飯店之後，連上 飯店WIFI 才能收得到 "本國SIM1的sms"
+					</li>
+				</ul>   
+			</li>
+		</ul>   
 </body>
 </html>
