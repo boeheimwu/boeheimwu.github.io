@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+	<meta charset="utf-8">
+	<title>行事曆</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><!-- CDN -->
+	<script type="text/javascript">
+	$(document).ready(function(){     
+		$(".cardbtn").click(function(){
+			let elm_id = $(this).text();
+			$(".my_tr_card").hide();
+			$("#my_tr_card_"+(elm_id||"")).show();
+		});
+		$(".cardbtn").first().trigger("click");
+	});
+	</script>	
+	<link href="calendar_ico.png" rel="shortcut icon" />
+	<link rel="stylesheet" type="text/css" href="file:///C:/Users/bohan/OneDrive/my_fmt.css"> 
+</head> 
+<body>                              
+        <table border="1" class="ml-0 bg-gray-700 Z_w1350"> 
+           <tr><td class="cardbtn ct Z_fg-silver ">Now</td></tr>
+           <tr id="my_tr_card_Now" class="align_top my_tr_card">	
+              <td class="ct"><img src="2026行事曆A.png" />
+              </td>       
+           </tr>
+	   <!-- card separator -->
+           <tr><td class="cardbtn ct Z_fg-silver ">Next</td></tr>
+           <tr id="my_tr_card_Next" class="align_top my_tr_card">	
+              <td class="ct"><img src="2026行事曆B.png" />
+              </td>     
+           </tr>
+	   <!-- card separator -->
+        </table> 
+</body>
+</html>
