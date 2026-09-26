@@ -91,6 +91,8 @@
 					window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+".TW/technical-analysis", "_blank");
 				}else if(src=="stk_yahooIT"){
 					window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+".TW/institutional-trading", "_blank");
+				}else if(src=="stk_FCFgoodinfo"){
+					window.open("https://goodinfo.tw/tw/StockFinDetail.asp?RPT_CAT=XX_M_QUAR_ACC&STOCK_ID="+val_stkNo, "_blank");
 				//}else if(src=="stk_yahooNews"){
 				//	window.open("https://tw.stock.yahoo.com/quote/"+val_stkNo+".TW/news", "_blank");
 				}
@@ -104,6 +106,7 @@
 		$("#stk_goodinfo").click(function(){stock_search("stk_goodinfo")});
 		$("#stk_yahooTA").click(function(){stock_search("stk_yahooTA")});
 		$("#stk_yahooIT").click(function(){stock_search("stk_yahooIT")});
+		$("#stk_FCFgoodinfo").click(function(){stock_search("stk_FCFgoodinfo")});
 		//~~~~~~
 		let html_aidiv_id = "ai_list";
 		let html_aichosen_id = "ai_chosen";
@@ -798,6 +801,12 @@ bohan
 					|&nbsp;<a id="stk_yahooTA">yahoo均線</a>
 			      </td>  
 			      <td class="ZG"><a id="stk_yahooIT">yahoo籌碼</a>
+			      </td>       	   
+			   </tr>
+			</table> 
+			<table border="1"> 
+			   <tr class="align_top">
+			      <td><a id="stk_FCFgoodinfo">自由現金流</a>
 			      </td>       	   
 			   </tr>
 			</table> 
